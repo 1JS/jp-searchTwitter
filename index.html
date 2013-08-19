@@ -5,16 +5,14 @@
     <title>jQuery Plugin</title>
     <link rel="stylesheet" href="js/vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="js/vendor/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/jquery.plugin.css">
   </head>
   <h1>My Tweets</h1>
   <h3>Tweets</h3>
   <ul class="tweets"></ul>
   <h3>Tweets</h3>
-  <ul class="tweets"></ul>
+  <ul class="tweets2"></ul>
   <h3>Tweets</h3>
-  <ul class="tweets"></ul>
+  <ul class="tweets tweets3"></ul>
   <script src="js/vendor/jquery-1.10.2.js"></script>
   <script src="js/vendor/zepto.js"></script>
   <script src="js/vendor/bootstrap/js/bootstrap.js"></script>
@@ -22,6 +20,25 @@
 </html>
 <script>
   (function(){
-    $('ul.tweets').queryTwitter();
+    $('ul.tweets').queryTwitter({
+      search: 'CNN',
+      limit: 3,
+      transition: 'fadeToggle' 
+    });
+    
+    $('.tweets2').queryTwitter({
+      search: 'AOL',
+      limit: 5,
+      transition: 'slideToggle',
+      wrapEachWith: '<p></p>',
+      onComplete: function() {
+        console.log('hi');
+      }
+      refresh: 4000
+    });
+    
+    var instance = $.data( $('div.tweets')[0], 'queryTwitter');
+    //- you can update the new url
+    //- instance.url = 'http://newurl.com';
   })(jQuery);
 </script>
