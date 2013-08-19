@@ -2,8 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="js/vendor/bootstrap/bootstrap.css">
+    <title>jQuery Plugin</title>
+    <link rel="stylesheet" href="js/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="js/vendor/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/jquery.plugin.css">
   </head>
+  <h1>My Tweets</h1>
+  <h3>Tweets</h3>
+  <ul class="tweets"></ul>
+  <h3>Tweets</h3>
+  <ul class="tweets"></ul>
+  <h3>Tweets</h3>
+  <ul class="tweets"></ul>
+  <script src="js/vendor/jquery-1.10.2.js"></script>
+  <script src="js/vendor/zepto.js"></script>
+  <script src="js/vendor/bootstrap/js/bootstrap.js"></script>
   <script src="js/jquery.plugin.js"></script>
 </html>
+<script>
+  (function(){
+    $('ul.tweets').queryTwitter();
+  })(jQuery);
+</script>

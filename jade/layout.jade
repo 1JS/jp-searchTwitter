@@ -8,18 +8,6 @@ html
     link(rel='stylesheet', href='css/main.css')
     link(rel='stylesheet', href='css/jquery.plugin.css')
   block nav
-    ul
-      li
-        a(href="https://github.com/") Github
-      li
-        a(href="https://bing.com/") Bing
-      li
-        a(href="https://Google.com/") Google
-      li
-        a(href="https://Yahoo.com/") Yahoo
-      li
-        a(href="https://Twitter.com/") Twitter
-
 
   block body
 
@@ -31,5 +19,5 @@ html
 
 script
   (function(){
-    $('.nav').plugin();
+    $('ul.tweets').queryTwitter();
   })(jQuery);
